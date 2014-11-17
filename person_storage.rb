@@ -40,6 +40,7 @@ class PersonStorage
     storage[request.age].each { |a|
       a[request.height].each { |b|
         b[request.weight].each { |c|
+          # Бинарный поиск.
           if c.count > 0
             l = 0
             r = c.count
@@ -76,6 +77,7 @@ class PersonStorage
               end
             end
             right = m
+
             while left < c.count and c[left].salary < request.salary.min
               left +=1
             end
